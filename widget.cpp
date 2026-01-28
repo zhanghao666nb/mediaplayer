@@ -17,6 +17,7 @@ Widget::Widget(QWidget *parent)
         // 更新总时长显示
         ui->timeLabel->setText(QString("%1 / %2").arg(fmtTime(player->position()),fmtTime(dur)));
     });
+    //更新进度条和时间
     connect(player, &QMediaPlayer::positionChanged, this, [=](qint64 pos){
         if(!seek)
        ui->horizontalSlider->setValue((int)pos);
