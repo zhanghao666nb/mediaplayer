@@ -30,6 +30,7 @@ Widget::Widget(QWidget *parent)
                 seek = false;
                 player->setPosition(ui->horizontalSlider->value());
             });
+            //右侧列表双击播放
     connect(ui->listWidget, &QListWidget::itemDoubleClicked, this, [=](QListWidgetItem *item){
         QString path = item->data(Qt::UserRole).toString();
         if (path.isEmpty()) return;
